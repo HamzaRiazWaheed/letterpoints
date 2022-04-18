@@ -1,0 +1,12 @@
+.GameScreen {
+  position: relative;
+  height: 100vh;
+}
+
+.GridLayout {
+  display: grid;
+  grid-template-columns: calc(100% - 300px) auto;
+  height: 100vh;
+  gap: 2px;
+  background-color: rgb(112 76 182);
+}

@@ -1,0 +1,49 @@
+.ScorePanel {
+  background-color: #e3ddf2;
+  padding: 0 10px 10px 10px;
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-rows: calc(100% - 170px) 50px 120px;
+}
+
+.TableWrapper {
+  background-color: #efeafd;
+}
+
+.Table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  color: #704cb6;
+  
+}
+.Table td, .Table th {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.Table th {
+  color: #fff;
+  background-color: #704cb6;
+}
+.TableAlphabet {
+  padding: 4px;
+  color: #704cb6;
+  text-align: center;
+  display: block;
+  border-radius: 2px;
+  width: 20px;
+  line-height: 19px;
+  height: 20px;
+  background-color: #efebf8;
+  font-weight: 600;
+  box-shadow: 0 0 0px 2px rgb(218 208 237);
+}
+
+.ScoreCard {
+  text-align: left;
+  padding: 10px 0;
+  font-size: 20px;
+  color: #704cb6;
+}

@@ -1,0 +1,15 @@
+.PanelLayout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  background-color: rgb(254 253 255);
+  padding: 5px;
+}
+.FlexButton {
+  flex: 1 0 100px;
+  border: 2px solid rgb(112 76 182 / 10%) !important;
+}
+.Relative {
+  position: relative;
+}
