@@ -34,8 +34,6 @@ export interface GameState {
   setting:  Settings;
 }
 
-
-
 const initialState: GameState = {
   score: 0,
   points: {},
@@ -66,9 +64,10 @@ const getPoint = (state: GameState, letter: keyof typeof Alphabets): {points: nu
   let bonus = 0;
   const countOfLetter = (state.alphabetCount[letter] ?? 0) + 1;
   // check for bonus
-  if(state.setting.bonuses[letter] && ((countOfLetter % state.setting.bonuses[letter]!.count) === 0)) {
-    points = state.setting.bonuses[letter]!.points - points;
-    bonus = state.setting.bonuses[letter]!.points;
+  const letterBonus = state.setting.bonuses[letter];
+  if(letterBonus && ((countOfLetter % letterBonus!.count) === 0)) {
+    points = letterBonus.points - points;
+    bonus = letterBonus.points;
   }
   return {points, bonus} 
 }
@@ -116,9 +115,6 @@ export const gameSlice = createSlice({
 
 export const { addPoint, startPlay, restart } = gameSlice.actions;
 
-// The function below is called a selector and allows us to select a value from
-// the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectState = (state: RootState) => state.game;
 
 export default gameSlice.reducer;

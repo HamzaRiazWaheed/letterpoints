@@ -6,6 +6,7 @@ import {
   selectState,
   restart
 } from '../gameSlice';
+import { Popup } from '../../../components';
 import styles from './PlayPanel.module.css';
 
 const Button = ({letter, onClick, pressed}: {letter: string, onClick: () => void, pressed: boolean}) => {
@@ -44,7 +45,7 @@ const PlayPanel = () => {
     }
     {
       status === "done" ? <div className={styles.Relative}>
-        <div className='startPanel'>
+        <Popup>
           <div>
             <div className='jumboText'>You Scored: {score} points</div>
             <br />
@@ -53,7 +54,7 @@ const PlayPanel = () => {
               dispatch(restart());
             }}>Restart</button>
           </div>
-        </div>
+        </Popup>
       </div> : null
     }
   </div>
